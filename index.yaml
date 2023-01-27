@@ -8185,6 +8185,112 @@ entries:
   gluu:
   - annotations:
       artifacthub.io/changes: |
+        - Added PDB and Topology spread constraints
+        - fixed global override user values
+      artifacthub.io/containsSecurityUpdates: "true"
+      artifacthub.io/images: |
+        - name: auth-server
+          image: janssenproject/auth-server:1.0.5-1
+        - name: auth-server-key-rotation
+          image: janssenproject/certmanager:1.0.5-1
+        - name: configuration-manager
+          image: janssenproject/configurator:1.0.5-1
+        - name:  config-api
+          image: janssenproject/config-api:1.0.5-1
+        - name: fido2
+          image: janssenproject/fido2:1.0.5-1
+        - name: opendj
+          image: gluufederation/opendj:5.0.0_dev
+        - name: persistence
+          image: janssenproject/persistence-loader:1.0.5-1
+        - name: scim
+          image: janssenproject/scim:1.0.5-1
+        - name: casa
+          image: gluufederation/casa:5.0.0_dev
+        - name: admin-ui
+          image: gluufederation/admin-ui:1.0.1_dev
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/prerelease: "true"
+      catalog.cattle.io/certified: partner
+      catalog.cattle.io/display-name: Gluu Cloud Identity and Access Management
+      catalog.cattle.io/release-name: gluu
+    apiVersion: v2
+    appVersion: 5.0.0
+    created: "2023-01-27T06:40:39.745233945Z"
+    dependencies:
+    - condition: global.config.enabled
+      name: config
+      repository: ""
+      version: 5.0.10
+    - condition: global.config-api.enabled
+      name: config-api
+      repository: ""
+      version: 5.0.10
+    - condition: global.opendj.enabled
+      name: opendj
+      repository: ""
+      version: 5.0.10
+    - condition: global.auth-server.enabled
+      name: auth-server
+      repository: ""
+      version: 5.0.10
+    - condition: global.admin-ui.enabled
+      name: admin-ui
+      repository: ""
+      version: 5.0.10
+    - condition: global.fido2.enabled
+      name: fido2
+      repository: ""
+      version: 5.0.10
+    - condition: global.scim.enabled
+      name: scim
+      repository: ""
+      version: 5.0.10
+    - condition: global.nginx-ingress.enabled
+      name: nginx-ingress
+      repository: ""
+      version: 5.0.10
+    - condition: global.oxshibboleth.enabled
+      name: oxshibboleth
+      repository: ""
+      version: 5.0.10
+    - condition: global.oxpassport.enabled
+      name: oxpassport
+      repository: ""
+      version: 5.0.10
+    - condition: global.casa.enabled
+      name: casa
+      repository: ""
+      version: 5.0.10
+    - condition: global.auth-server-key-rotation.enabled
+      name: auth-server-key-rotation
+      repository: ""
+      version: 5.0.10
+    - condition: global.persistence.enabled
+      name: persistence
+      repository: ""
+      version: 5.0.10
+    - condition: global.istio.ingress
+      name: cn-istio-ingress
+      repository: ""
+      version: 5.0.10
+    description: Gluu Access and Identity Management
+    digest: a6af30ff7c4b3f8cbc1c4ff4e82407f7a0a7ac253f7c895738d1dd738435a9e0
+    home: https://www.gluu.org
+    icon: https://gluu.org/docs/gluu-server/favicon.ico
+    kubeVersion: '>=v1.21.0-0'
+    maintainers:
+    - email: support@gluu.org
+      name: moabu
+    name: gluu
+    sources:
+    - https://gluu.org/docs/gluu-server
+    - https://github.com/GluuFederation/flex/flex-cn-setup
+    urls:
+    - assets/gluu/gluu-5.0.1000.tgz
+    version: 5.0.1000
+  - annotations:
+      artifacthub.io/changes: |
         - Update always
       artifacthub.io/containsSecurityUpdates: "true"
       artifacthub.io/images: |
